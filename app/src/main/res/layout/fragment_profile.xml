@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.ProfileFragment">
+
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/details_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_img"
+            android:layout_width="@dimen/profile_picture_width_height"
+            android:layout_height="@dimen/profile_picture_width_height"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:background="@drawable/ic_boy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.example.android_kotlin_demo.ui.views.CustomEditText
+            android:id="@+id/first_name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            app:editable="false"
+            app:label="@string/first_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_img" />
+
+
+        <com.example.android_kotlin_demo.ui.views.CustomEditText
+            android:id="@+id/last_name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="51dp"
+            app:editable="false"
+            app:error_message="@string/ERROR_INVALID_EMAIL_FORMAT"
+            app:label="@string/last_name"
+            app:layout_constraintEnd_toEndOf="@+id/first_name_text_view"
+            app:layout_constraintStart_toStartOf="@+id/first_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/first_name_text_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

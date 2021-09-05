@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.register.RegisterActivity">
+
+
+    <com.example.android_kotlin_demo.ui.views.CustomEditText
+        android:id="@+id/email_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        app:error_message="@string/ERROR_INVALID_EMAIL_FORMAT"
+        app:hint="@string/EMAIL_PLACEHOLDER"
+        app:imeOptions="actionNext"
+        app:label="@string/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:text_type="textEmailAddress" />
+
+
+    <com.example.android_kotlin_demo.ui.views.CustomEditText
+        android:id="@+id/password_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="51dp"
+        app:error_message="@string/password_error"
+        app:hint="@string/password"
+        app:imeOptions="actionDone"
+        app:text_type="textPassword"
+        app:label="@string/password"
+        app:layout_constraintEnd_toEndOf="@+id/email_text_view"
+        app:layout_constraintStart_toStartOf="@+id/email_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/email_text_view"
+        app:regex="@string/regex_min_1_chars" />
+
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/register"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_text_view" />
+
+
+    <include
+        android:id="@+id/generic_loader"
+        layout="@layout/generic_loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
